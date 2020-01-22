@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo_app}} - Listar</title>
+    <link rel="stylesheet" href="../static/estilo.css">
+</head>
+<body>
+    <div class="conteudo">
+        <a class='btn-cadastro' href="/cadastrar">Cadastrar</a>
+        <table id='tabela-pessoa'>
+            <thead>
+                <tr>
+                    <th>PessoaId</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Idade</th>
+                    <th>EnderecoId</th>
+                    <th>Logradouro</th>
+                    <th>Numero</th>
+                    <th>Complemento</th>
+                    <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>Cep</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in lista %}
+                <tr>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.nome }}</td>
+                    <td>{{ p.sobrenome }}</td>
+                    <td>{{ p.idade }}</td>
+                    <td>{{ p.endereco.id if p.endereco.id  else '' }}</td>
+                    <td>{{ p.endereco.logradouro if p.endereco.logradouro else '' }}</td>
+                    <td>{{ p.endereco.numero if p.endereco.numero else '' }}</td>
+                    <td>{{ p.endereco.complemento if p.endereco.complemento else '' }}</td>
+                    <td>{{ p.endereco.bairro if p.endereco.bairro else '' }}</td>
+                    <td>{{ p.endereco.cidade if p.endereco.cidade else '' }}</td>
+                    <td>{{ p.endereco.cep if p.endereco.cep else '' }}</td>
+                    <td>
+                        <a href="/cadastrar?id={{ p.id }}" class="editar">Editar</a>
+                        <a href="/excluir?id={{ p.id }}&id_end={{ p.endereco.id }}" class="excluir">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

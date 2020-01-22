@@ -1,0 +1,93 @@
+@import url("https://file.myfontastic.com/nGaMjAzYmL9j4VgEgxH8pJ/icons.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.social-media {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 40px;
+  left: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .social-media {
+    display: none;
+  }
+}
+
+.social-media__link {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+.social-media__link:hover .social-media__user {
+  width: 230px;
+  opacity: 1;
+  transition: all 1.0s cubic-bezier(0.66, -0.72, 2.59, 1.56);
+}
+
+.social-media__link--twitter .social-media__user {
+  background-color: #993399;
+}
+
+.social-media__link--github {
+  margin: 5px 0;
+}
+
+.social-media__link--github .social-media__user {
+  background-color: #00008B;
+}
+
+.social-media__link--codepen .social-media__user {
+  background-color: #080808;
+}
+
+.social-media__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0px;
+  height: 0px;
+  font-size: 10px;
+  z-index: 1000000;
+}
+
+.social-media__user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0px;
+  height: 20px;
+  opacity: 0;
+  transition: width .5s, opacity .2s;
+  z-index: 999999;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 0 px;
+}
+
+.footer-git {
+  position: fixed;
+  bottom: 0;
+  width: 99.1%;
+   
+  background-color: #222;
+  text-align: center;
+  color: #ffffff;
+  font-family: sans-serif;
+  z-index: 10;
+  font-size: 11px;
+}
+
+.footer-git a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+.footer-git a span {
+  position: absolute;
+  right: -15px;
+}
