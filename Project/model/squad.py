@@ -1,7 +1,7 @@
 # classe squad
 class Squad:
 
-    # Metodo que inicia sempre que a funçãoé chamada
+    # Metodo que inicia sempre que a classe é chamada
     def __init__(self):
         self.ID = 0
         self.NOME = ''
