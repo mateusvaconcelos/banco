@@ -8,7 +8,7 @@
   left: 5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
   .social-media {
     display: none;
   }
@@ -28,19 +28,19 @@
 }
 
 .social-media__link--twitter .social-media__user {
-  background-color: #993399;
+  background-color: #ec63ec;
 }
 
 .social-media__link--github {
-  margin: 5px 0;
+  margin: 22px 0;
 }
 
 .social-media__link--github .social-media__user {
-  background-color: #00008B;
+  background-color: rgb(153, 153, 230);
 }
 
 .social-media__link--codepen .social-media__user {
-  background-color: #080808;
+  background-color: #888585;
 }
 
 .social-media__icon {
@@ -48,20 +48,20 @@
   justify-content: center;
   align-items: center;
   width: 0px;
-  height: 0px;
+  height: 30px;
   font-size: 10px;
-  z-index: 1000000;
+  z-index: 1000;
 }
 
 .social-media__user {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 0px;
-  height: 20px;
+  width: 10px;
+  height: 40px;
   opacity: 0;
   transition: width .5s, opacity .2s;
-  z-index: 999999;
+  z-index: 999;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 0 px;
@@ -70,14 +70,14 @@
 .footer-git {
   position: fixed;
   bottom: 0;
-  width: 99.1%;
+  width: 100%;
    
   background-color: #222;
   text-align: center;
   color: #ffffff;
   font-family: sans-serif;
   z-index: 10;
-  font-size: 11px;
+  font-size: 17px;
 }
 
 .footer-git a {
@@ -89,5 +89,5 @@
 
 .footer-git a span {
   position: absolute;
-  right: -15px;
+  right: 0px;
 }
