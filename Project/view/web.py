@@ -23,17 +23,19 @@ def inicio():
 
 @app.route('/listar')
 def listar():
-    pessoas = pessoa_controller.listar_todos()
-    return render_template('listar.html', titulo_app = nome, lista = pessoas)
+    squads = squad_controller.listar_todos()
+    return render_template('listar.html', titulo_app = nome, lista = squads)
 
 @app.route('/cadastrar')
 def cadastrar():
-    pessoa = Pessoa()
-    pessoa.endereco = Endereco()
+    squad = Squad()
+    squad.framework = Framework()
+    squad.backend = Backend()
+    squad.sgbd = Sgbd()
     if 'id' in request.args:
         id = request.args['id']
-        pessoa = pessoa_controller.buscar_por_id(id)
-    return render_template('cadastrar.html', titulo_app = nome, pessoa = pessoa )
+        squad = squad_controller.buscar_por_id(id)
+    return render_template('cadastrar.html', titulo_app = nome, squad = squad )
 
 
 @app.route('/excluir')
@@ -47,26 +49,31 @@ def excluir():
 
 @app.route('/salvar')
 def salvar():
-    pessoa = Pessoa()
-    pessoa.id = request.args['id']
-    pessoa.nome = request.args['nome']
-    pessoa.sobrenome = request.args['sobrenome']
-    pessoa.idade = request.args['idade']
+    squad = Pessoa()
+    squad.ID = request.args['ID']
+    squad.NOME = request.args['NOME']
+    squad.DESCRICAO = request.args['DESCRICAO']
+    squad.NUMEROPESOSAS = request.args['NUMEROPESSOAS']
 
-    end = Endereco()
-    end.id = request.args['endereco_id']
-    end.logradouro = request.args['logradouro']
-    end.numero = request.args['numero']
-    end.complemento = request.args['complemento']
-    end.bairro = request.args['bairro']
-    end.cidade = request.args['cidade']
-    end.cep = request.args['cep']
+    FRAMEWORK = Framework()
+    FRAMEWORK.ID = request.args['ID']
+    FRAMEWORK.NOME = request.args['NOME']
 
-    pessoa.endereco = end
-    if pessoa.id == 0:
-        pessoa_controller.salvar(pessoa)
+    LINGUAGEM = Backend()
+    FRAMEWORK.ID = request.args['ID']
+    FRAMEWORK.NOME = request.args['NOME']
+
+    SGBD = Sgbd()
+    FRAMEWORK.ID = request.args['ID']
+    FRAMEWORK.NOME = request.args['NOME']
+
+    squad.framework = end
+    squad.sackend = end1
+    squad.sgbd = end2
+    if squad.id == 0:
+        squad_controller.salvar(squad)
     else:
-        pessoa_controller.alterar(pessoa)
+        squad_controller.alterar(squad)
     return redirect('/listar')
 
 app.run(debug=True)
