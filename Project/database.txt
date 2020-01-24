@@ -2,4 +2,3 @@ host = 'mysql.padawans.dev'
 database = 'padawans05'
 user = 'padawans 05'
 passwd = 'DV2019'
-a
