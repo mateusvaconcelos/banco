@@ -1,14 +1,20 @@
 from flask import Flask, render_template, request, redirect
 import sys
-sys.path.append('C:/Users/900149/Desktop/ideias/AulasPython/36-Aula36')
-from Controller.pessoa_controller import PessoaController
-from Controller.endereco_controller import EnderecoController
-from Model.endereco import Endereco
-from Model.pessoa import Pessoa
+sys.path.append('C:/Users/900149/Desktop/banco/Project')
+from Controller.backend_controller import BackendController
+from Controller.framework_controller import FrameworkController
+from Controller.sgbd_controller import SgbdController
+from Controller.squad_controller import SquadController
+from Model.framework import Framework
+from Model.backend import Backend
+from Model.squad import Squad
+from Model.sgbd import Sgbd
 
 app = Flask(__name__)
-pessoa_controller = PessoaController()
-end_controller = EnderecoController()
+backend_controller = BackendController()
+framework_controller = framework_controller()
+sgbd_controller = SgbdController()
+squad_controller = SquadController()
 nome = 'Cadastros'
 
 @app.route('/')
