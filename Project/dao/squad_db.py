@@ -4,13 +4,13 @@ from model.squad import Squad
 
 # Classe de squads
 class SquadDB:
-    conexao = MySQLdb.connect(host = 'localhost', database = 'squads', user = 'root', passwd = '')
+    conexao = MySQLdb.connect(host = 'mysql.padawans.dev', database = 'padawans05', user = 'padawans05', passwd = 'gm2019')
     cursor = conexao.cursor()
     database_table = 'squads.squads'
 
     def listar_todos(self):
         # Criação do comando para pegar todos os elementos da tabela
-        comando = f'SELECT * FROM {self.database_table}'
+        comando = f'SELECT * FROM {self.database_table};'
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall() # Vai pegar todos os elementos da tabela
         return resultado
