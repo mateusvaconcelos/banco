@@ -15,6 +15,5 @@ from dao.squad_db import SquadDB
 # print(okokokok.listar_todos()) # error(command SELECT denied) ?????
 
 teste = SquadController()
-for i in teste.listar_todos():
-    print(i)
+print(teste.listar_todos())
     

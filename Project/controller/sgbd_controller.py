@@ -20,3 +20,4 @@ class SgbdController:
 
     def deletar(self, id):
         self.dao.deletar(id)
+        

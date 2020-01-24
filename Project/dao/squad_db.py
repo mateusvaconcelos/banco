@@ -13,6 +13,7 @@ class SquadDB:
         comando = f'SELECT * FROM {self.database_table};'
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall() # Vai pegar todos os elementos da tabela
+        print(resultado)
         return resultado
 
     def buscar_por_id(self, ID):
@@ -65,3 +66,6 @@ class SquadDB:
         self.cursor.execute(comando)
         self.conexao.commit()
 
+
+ok = SquadDB()
+print(ok.listar_todos())

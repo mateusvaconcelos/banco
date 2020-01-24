@@ -1,12 +1,24 @@
+import MySQLdb
 import sys
 sys.path.append('C:/Users/900171/Documents/GITHUB/banco/Project')
 from model.squad import Squad
 from dao.squad_db import SquadDB
-import MySQLdb
+
+from model.framework import Framework
+from controller.framework_controller import FrameworkController
+
+from model.backend import Backend
+from controller.backend_controller import BackendController
+
+from model.sgbd import Sgbd
+from controller.sgbd_controller import SgbdController
 
 # Controller vai realizar a união do DAO com o MODEL
 class SquadController:
     dao = SquadDB()
+    framework_controller = FrameworkController()
+    backend_controller = BackendController() 
+    sgbd_controller = SgbdController()
 
     def listar_todos(self):
         lista_squad = []
@@ -17,9 +29,18 @@ class SquadController:
             squad.NOME = s[1]
             squad.DESCRICAO = s[2]
             squad.NUMEROPESOSAS = s[3]
-            squad.LINGUAGEMBACKEND.NOME = s[4]
-            squad.FRAMEWORKFRONTEND.NOME = s[5]
-            squad.SGBD.NOME = s[6]
+
+            squad.FRAMEWORKFRONTEND = Framework()
+            squad.FRAMEWORKFRONTEND.ID = s[7]
+            squad.FRAMEWORKFRONTEND.NOME = s[8]
+
+            squad.LINGUAGEMBACKEND = Backend()
+            squad.LINGUAGEMBACKEND.ID = s[9]
+            squad.LINGUAGEMBACKEND.NOME = s[10]
+
+            squad.SGBD = Sgbd()
+            squad.SGBD.ID = s[12]
+            squad.SGBD.NOME = s[13]
             lista_squad.append(squad)
 
         return lista_squad
@@ -31,9 +52,18 @@ class SquadController:
         squad.NOME = s[1]
         squad.DESCRICAO = s[2]
         squad.NUMEROPESOSAS = s[3]
-        squad.LINGUAGEMBACKEND.NOME = s[4]
-        squad.FRAMEWORKFRONTEND.NOME = s[5]
-        squad.SGBD.NOME = s[6]
+
+        squad.FRAMEWORKFRONTEND = Framework()
+        squad.FRAMEWORKFRONTEND.ID = s[7]
+        squad.FRAMEWORKFRONTEND.NOME = s[8]
+
+        squad.LINGUAGEMBACKEND = Backend()
+        squad.LINGUAGEMBACKEND.ID = s[9]
+        squad.LINGUAGEMBACKEND.NOME = s[10]
+
+        squad.SGBD = Sgbd()
+        squad.SGBD.ID = s[12]
+        squad.SGBD.NOME = s[13]
         return squad   
 
     def salvar(self, squad: Squad):
@@ -44,3 +74,4 @@ class SquadController:
 
     def deletar(self, id):
         self.dao.deletar(id)
+        
