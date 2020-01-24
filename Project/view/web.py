@@ -70,7 +70,7 @@ def salvar():
     squad.framework = end
     squad.sackend = end1
     squad.sgbd = end2
-    if squad.id == 0:
+        if squad.id == 0:
         squad_controller.salvar(squad)
     else:
         squad_controller.alterar(squad)
