@@ -1,7 +1,6 @@
 from model.framework import Framework
 from model.backend import Backend
-from model.framework import Framework
-
+from model.sgbd import Sgbd
 
 # classe squad
 class Squad:
@@ -12,9 +11,9 @@ class Squad:
         self.NOME = ''
         self.DESCRICAO = ''  
         self.NUMEROPESOSAS = 0 
-        self.LINGUAGEMBACKEND = ''  
-        self.FRAMEWORKFRONTEND = '' 
-        self
+        self.LINGUAGEMBACKEND = Backend()  
+        self.FRAMEWORKFRONTEND = Framework() 
+        self.SGBD = Sgbd()
 
     def __str__(self):
         return f'{self.ID} {self.NOME} {self.DESCRICAO} {self.NUMEROPESOSAS} {self.LINGUAGEMBACKEND} {self.FRAMEWORKFRONTEND}'

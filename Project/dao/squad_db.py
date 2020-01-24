@@ -6,7 +6,7 @@ from model.squad import Squad
 class SquadDB:
     conexao = MySQLdb.connect(host = 'mysql.padawans.dev', database = 'padawans05', user = 'padawans05', passwd = 'gm2019')
     cursor = conexao.cursor()
-    database_table = 'squads.squads'
+    database_table = 'padawans05.squads'
 
     def listar_todos(self):
         # Criação do comando para pegar todos os elementos da tabela
@@ -29,23 +29,24 @@ class SquadDB:
         (
             NOME,
             DESCRICAO,
-            NUMEROPESSOA,
-            LINGUAGEMBACKEND,
-            FRAMEWORKFRONT
+            NUMEROPESSOAS
+            ID_FRAMEWORK,
+            ID_LINGUAGEM,
+            ID_SGBD  
         )
         VALUES
         (
             '{squad.NOME}',
             '{squad.DESCRICAO}',
             {squad.NUMEROPESOSAS},
-            '{squad.LINGUAGEMBACKEND}',
-            '{squad.FRAMEWORKFRONTEND}'
+            '{squad.FRAMEWORKFRONTEND.ID}',
+            '{squad.LINGUAGEMBACKEND.ID }',
+            '{squad.SGBD.ID}'
         );'''
         self.cursor.execute(comando)
         self.conexao.commit()
 
     def alterar(self, squad:Squad):
-        
         '''Aterar informações do banco de dados :D'''
         comando = f'''
         UPDATE {self.database_table} SET
@@ -64,4 +65,3 @@ class SquadDB:
         self.cursor.execute(comando)
         self.conexao.commit()
 
-    

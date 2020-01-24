@@ -20,7 +20,3 @@ class SgbdController:
 
     def deletar(self, id):
         self.dao.deletar(id)
-
-
-ok = SgbdController()
-print( ok.listar_todos() )

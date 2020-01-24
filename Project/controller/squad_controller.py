@@ -1,5 +1,5 @@
 import sys
-sys.path.append('c:/Users/900171/Documents/GITHUB/python_exercises/Aula037')
+sys.path.append('C:/Users/900171/Documents/GITHUB/banco/Project')
 from model.squad import Squad
 from dao.squad_db import SquadDB
 import MySQLdb
@@ -17,8 +17,9 @@ class SquadController:
             squad.NOME = s[1]
             squad.DESCRICAO = s[2]
             squad.NUMEROPESOSAS = s[3]
-            squad.LINGUAGEMBACKEND = s[4]
-            squad.FRAMEWORKFRONTEND = s[5]
+            squad.LINGUAGEMBACKEND.NOME = s[4]
+            squad.FRAMEWORKFRONTEND.NOME = s[5]
+            squad.SGBD.NOME = s[6]
             lista_squad.append(squad)
 
         return lista_squad
@@ -30,8 +31,9 @@ class SquadController:
         squad.NOME = s[1]
         squad.DESCRICAO = s[2]
         squad.NUMEROPESOSAS = s[3]
-        squad.LINGUAGEMBACKEND = s[4]
-        squad.FRAMEWORKFRONTEND = s[5]
+        squad.LINGUAGEMBACKEND.NOME = s[4]
+        squad.FRAMEWORKFRONTEND.NOME = s[5]
+        squad.SGBD.NOME = s[6]
         return squad   
 
     def salvar(self, squad: Squad):
@@ -42,6 +44,3 @@ class SquadController:
 
     def deletar(self, id):
         self.dao.deletar(id)
-
-objecti = SquadController()
-objecti.listar_todos()
