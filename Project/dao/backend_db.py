@@ -3,7 +3,7 @@ from model.backend import Backend
 Backend
 # Classe para manipulação da tabela LINGUAGEM_BACKEND 
 class BackendDB:
-    conexao = MySQLdb.connect(host = 'mysql.padawans.dev', database = 'padawans05', user = 'padawans05', passwd = 'GM2019')
+    conexao = MySQLdb.connect(host = 'mysql.padawans.dev', database = 'padawans05', user = 'padawans05', passwd = 'gm2019')
     cursor = conexao.cursor()
     database_table = 'padawans05.LINGUAGEM_BACKEND'
 
