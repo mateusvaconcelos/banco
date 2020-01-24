@@ -64,7 +64,7 @@ def salvar():
     FRAMEWORK.NOME = request.args['NOME']
 
     SGBD = Sgbd()
-    FRAMEWORK.ID = request.args['ID']
+    FRAMEWORK.ID = request.args['3ID']
     FRAMEWORK.NOME = request.args['NOME']
 
     squad.framework = end
