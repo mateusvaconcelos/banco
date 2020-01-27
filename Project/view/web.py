@@ -24,7 +24,7 @@ def inicio():
 @app.route('/listar')
 def listar():
     squads = squad_controller.listar_todos()
-    return render_template('listar.html', titulo_app = nome, lista = squads)
+    return render_template('criartabela.html', titulo_app = nome, lista = squads)
 
 @app.route('/cadastrar')
 def cadastrar():
@@ -35,7 +35,7 @@ def cadastrar():
     if 'id' in request.args:
         id = request.args['id']
         squad = squad_controller.buscar_por_id(id)
-    return render_template('cadastrar.html', titulo_app = nome, squad = squad )
+    return render_template('formulario.html', titulo_app = nome, squad = squad )
 
 
 @app.route('/excluir')
