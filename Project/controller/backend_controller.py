@@ -1,7 +1,7 @@
 # --- imports --- #
 from dao.backend_db import BackendDB
 from model.backend import Backend
-Backend
+
 # classe de controle do backend
 class BackendController:
     dao = BackendDB()

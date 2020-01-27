@@ -7,17 +7,28 @@ class SquadDB:
     conexao = MySQLdb.connect(host = 'mysql.padawans.dev', database = 'padawans05', user = 'padawans05', passwd = 'gm2019')
     cursor = conexao.cursor()
     database_table = 'padawans05.squads'
-
+    
     def listar_todos(self):
         # Criação do comando para pegar todos os elementos da tabela
-        comando = f'SELECT * FROM {self.database_table};'
+        comando = f'''
+        SELECT * from padawans05.squads as s 
+        left join padawans05.FRAMEWORK_FRONTEND as ff on s.ID_FRAMEWORK = ff.ID
+        left join padawans05.LINGUAGEM_BACKEND as lb on s.ID_FRAMEWORK = lb.ID
+        left join padawans05.SGBD as db on s.ID_FRAMEWORK = db.ID;
+        '''
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall() # Vai pegar todos os elementos da tabela
         return resultado
 
     def buscar_por_id(self, ID):
         '''Buscar squad a partir do ID'''
-        comando = f'SELECT * FROM {self.database_table} WHERE ID = {ID}'
+        comando = f'''
+        SELECT * from {database_table} as s 
+        left join padawans05.FRAMEWORK_FRONTEND as ff on s.ID_FRAMEWORK = ff.ID
+        left join padawans05.LINGUAGEM_BACKEND as lb on s.ID_FRAMEWORK = lb.ID
+        left join padawans05.SGBD as db on s.ID_FRAMEWORK = db.ID
+        WHERE s.ID = {ID};
+        '''
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
@@ -64,7 +75,3 @@ class SquadDB:
         comando = f'DELETE FROM {self.database_table} WHERE ID={id}'
         self.cursor.execute(comando)
         self.conexao.commit()
-
-
-ok = SquadDB()
-print(ok.listar_todos())

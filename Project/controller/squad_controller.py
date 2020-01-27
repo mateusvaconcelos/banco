@@ -23,6 +23,7 @@ class SquadController:
     def listar_todos(self):
         lista_squad = []
         lista_tuplas = self.dao.listar_todos()
+
         for s in lista_tuplas:
             squad = Squad()
             squad.ID = s[0]
@@ -31,16 +32,16 @@ class SquadController:
             squad.NUMEROPESOSAS = s[3]
 
             squad.FRAMEWORKFRONTEND = Framework()
-            squad.FRAMEWORKFRONTEND.ID = s[7]
+            squad.FRAMEWORKFRONTEND.ID = s[4]
             squad.FRAMEWORKFRONTEND.NOME = s[8]
 
             squad.LINGUAGEMBACKEND = Backend()
-            squad.LINGUAGEMBACKEND.ID = s[9]
+            squad.LINGUAGEMBACKEND.ID = s[5]
             squad.LINGUAGEMBACKEND.NOME = s[10]
 
             squad.SGBD = Sgbd()
-            squad.SGBD.ID = s[12]
-            squad.SGBD.NOME = s[13]
+            squad.SGBD.ID = s[6]
+            squad.SGBD.NOME = s[12]
             lista_squad.append(squad)
 
         return lista_squad
@@ -54,16 +55,16 @@ class SquadController:
         squad.NUMEROPESOSAS = s[3]
 
         squad.FRAMEWORKFRONTEND = Framework()
-        squad.FRAMEWORKFRONTEND.ID = s[7]
+        squad.FRAMEWORKFRONTEND.ID = s[4]
         squad.FRAMEWORKFRONTEND.NOME = s[8]
 
         squad.LINGUAGEMBACKEND = Backend()
-        squad.LINGUAGEMBACKEND.ID = s[9]
+        squad.LINGUAGEMBACKEND.ID = s[5]
         squad.LINGUAGEMBACKEND.NOME = s[10]
 
         squad.SGBD = Sgbd()
-        squad.SGBD.ID = s[12]
-        squad.SGBD.NOME = s[13]
+        squad.SGBD.ID = s[6]
+        squad.SGBD.NOME = s[12]
         return squad   
 
     def salvar(self, squad: Squad):
