@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="C:\Users\900149\Desktop\banco\Project\static\estilo.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!--Menu-->
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="C:\Users\900149\Desktop\banco\Project\view\template\index.html">Home</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!--<li class="nav-item active">
+            <a class="nav-link" href="/template/formulario">Entrar no formulário <span class="sr-only">(current)</span></a>
+          </li>-->
+          <li class="nav-item active">
+            <a class="nav-link" href="C:\Users\900149\Desktop\banco\Project\view\template\criartabela.html">Criar/apagar tabela <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+  <!--Menu-->
+  <div class="container">
+    <h2>Tabela</h2>
+  </div>
+  <body>
+    <div class="conteudo">
+        <!--<a class='btn-cadastro' href="/cadastrar">Cadastrar</a>-->
+        <table id='tabela-pessoa'>
+            <thead>
+                <tr>
+                    <th>PessoaId</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Idade</th>
+                    <th>EnderecoId</th>
+                    <th>Logradouro</th>
+                    <th>Numero</th>
+                    <th>Complemento</th>
+                    <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>Cep</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--{% for p in lista %}-->
+                <tr>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.nome }}</td>
+                    <td>{{ p.sobrenome }}</td>
+                    <td>{{ p.idade }}</td>
+                    <td>{{ p.endereco.id if p.endereco.id  else '' }}</td>
+                    <td>{{ p.endereco.logradouro if p.endereco.logradouro else '' }}</td>
+                    <td>{{ p.endereco.numero if p.endereco.numero else '' }}</td>
+                    <td>{{ p.endereco.complemento if p.endereco.complemento else '' }}</td>
+                    <td>{{ p.endereco.bairro if p.endereco.bairro else '' }}</td>
+                    <td>{{ p.endereco.cidade if p.endereco.cidade else '' }}</td>
+                    <td>{{ p.endereco.cep if p.endereco.cep else '' }}</td>
+                    
+                </tr>
+                <!--{% endfor %}-->
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+  <!-- Tabela -->
+
+ 
+    <!-- Criando tabela -->
+
+        <input class="btn btn-editar" type="submit" name="editar" value="editar">
+        <input class="btn btn-danger" type="submit" name="apagar" value="apagar">
+        
+        <!--<td>
+          <a href="/cadastrar?id={{ p.id }}" class="editar">Editar</a>
+          <a href="/excluir?id={{ p.id }}&id_end={{ p.endereco.id }}" class="excluir">Excluir</a>
+      </td>-->
+    </form>
+  </div>
+
+<!-- Footer -->
+    <footer>
+      <hr>
+      <p class="text-center">Disponível em <a href="https://github.com/mateusvaconcelos" target="_blank">GitHub</a></p>
+    </footer>
+<!-- Footer -->
+
+
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>
