@@ -17,4 +17,5 @@ from dao.squad_db import SquadDB
 teste = SquadController()
 a = teste.listar_todos()
 for i in a:
-    print(i)
+    for j in i:
+        if 

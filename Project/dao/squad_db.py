@@ -11,7 +11,7 @@ class SquadDB:
     def listar_todos(self):
         # Criação do comando para pegar todos os elementos da tabela
         comando = f'''
-        SELECT * from padawans05.squads as s 
+        SELECT * from {database_table} as s 
         left join padawans05.FRAMEWORK_FRONTEND as ff on s.ID_FRAMEWORK = ff.ID
         left join padawans05.LINGUAGEM_BACKEND as lb on s.ID_FRAMEWORK = lb.ID
         left join padawans05.SGBD as db on s.ID_FRAMEWORK = db.ID;
