@@ -49,7 +49,7 @@ def excluir():
 
 @app.route('/salvar')
 def salvar():
-    squad = Pessoa()
+    squad = Squad()
     squad.ID = request.args['ID']
     squad.NOME = request.args['NOME']
     squad.DESCRICAO = request.args['DESCRICAO']
