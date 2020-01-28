@@ -32,7 +32,7 @@ class FrameworkDB:
         )
         VALUES
         (
-            '{framework.NOME}',
+            '{framework.NOME}'
         );'''
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -41,9 +41,11 @@ class FrameworkDB:
         '''Aterar informações do banco de dados :D'''
         comando = f'''
         UPDATE {self.database_table} SET
-        NOME = '{framework.NOME}',
+            NOME = '{framework.NOME}'
         WHERE ID = {framework.ID}
         '''
+        self.cursor.execute(comando)
+        self.conexao.commit()
 
     def deletar(self, id):
         comando = f'DELETE FROM {self.database_table} WHERE ID={id}'

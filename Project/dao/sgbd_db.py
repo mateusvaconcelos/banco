@@ -32,8 +32,9 @@ class SgbdDB:
         )
         VALUES
         (
-            '{sgbd.NOME}',
-        );'''
+            '{sgbd.NOME}'
+        );
+        '''
         self.cursor.execute(comando)
         self.conexao.commit()
 
@@ -41,9 +42,11 @@ class SgbdDB:
         '''Aterar informações do banco de dados :D'''
         comando = f'''
         UPDATE {self.database_table} SET
-        NOME = '{sgbd.NOME}',
-        WHERE ID = {sgbd.ID}
+            NOME = '{sgbd.NOME}'
+        WHERE ID = {sgbd.ID};
         '''
+        self.cursor.execute(comando)
+        self.conexao.commit()
 
     def deletar(self, id):
         comando = f'DELETE FROM {self.database_table} WHERE ID={id}'

@@ -14,8 +14,22 @@ from dao.squad_db import SquadDB
 # print(okokok.listar_todos()) # ok
 # print(okokokok.listar_todos()) # error(command SELECT denied) ?????
 
-teste = SquadController()
-a = teste.listar_todos()
-for i in a:
-    for j in i:
-        if 
+test1 = SgbdController()
+for i in test1.listar_todos():
+    print(i)
+print(test1.buscar_por_id(1))
+from model.sgbd import Sgbd
+ok = Sgbd()
+
+# ok.ID = 3
+# ok.NOME = 'TA ERRADO'
+test1.deletar(4)
+for i in test1.listar_todos():
+    print(i)
+
+
+
+# test2 = FrameworkController()
+# test3 = BackendController()
+# test4 = SquadController()
+

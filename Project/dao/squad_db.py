@@ -61,11 +61,11 @@ class SquadDB:
         '''Aterar informações do banco de dados :D'''
         comando = f'''
         UPDATE {self.database_table} SET
-        NOME = '{squad.NOME}',
-        DESCRICAO = '{squad.DESCRICAO}',
-        NUMEROPESSOA = {squad.NUMEROPESOSAS},
-        LINGUAGEMBACKEND = '{squad.LINGUAGEMBACKEND}',
-        FRAMEWORKFRONT = '{squad.FRAMEWORKFRONTEND}'
+            NOME = '{squad.NOME}',
+            DESCRICAO = '{squad.DESCRICAO}',
+            NUMEROPESSOA = {squad.NUMEROPESOSAS},
+            LINGUAGEMBACKEND = '{squad.LINGUAGEMBACKEND}',
+            FRAMEWORKFRONT = '{squad.FRAMEWORKFRONTEND}'
         WHERE ID = {squad.ID}
         '''
         self.cursor.execute(comando)

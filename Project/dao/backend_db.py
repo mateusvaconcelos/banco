@@ -31,7 +31,7 @@ class BackendDB:
         )
         VALUES
         (
-            '{backend.NOME}',
+            '{backend.NOME}'
         );'''
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -40,9 +40,11 @@ class BackendDB:
         '''Aterar informações do banco de dados :D'''
         comando = f'''
         UPDATE {self.database_table} SET
-        NOME = '{backend.NOME}',
+            NOME = '{backend.NOME}'
         WHERE ID = {backend.ID}
         '''
+        self.cursor.execute(comando)
+        self.conexao.commit()
 
     def deletar(self, id):
         comando = f'DELETE FROM {self.database_table} WHERE ID={id}'
